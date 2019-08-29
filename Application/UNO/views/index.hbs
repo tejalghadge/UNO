@@ -1,0 +1,136 @@
+<div class="container">
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">{{title}}</a>
+        </div>
+        <ul class="nav navbar-nav pull-right">
+            <li class="active"><a href="#">{{action}}</a></li>
+            <li><a id="rules">Rules</a></li>
+            <li><a id="about">About Us</a></li>
+        </ul>
+    </div>
+</nav>
+<div id="myModal-About" class="modal">
+
+        <!-- Modal content -->
+        <div id="" class="modal-content">
+            <span id="closeModal-About" class="close">&times;</span>
+            <h3>Team 5</h3>
+            <table class="table" style="table">
+            <thead>
+                <tr>
+                <th scope="col" class="table-th">Name</th>
+                <th scope="col" class="table-th">Role</th>
+                <th scope="col" class="table-th">email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td class="table-td">Shivam Rai</td>
+                <td class="table-td">Team 5 lead, Back-end Developer</td>
+                <td class="table-td">srai3@mail.sfsu.edu</td>
+                </tr>
+                <tr>
+                <td class="table-td">Tejal Ghadge</td>
+                <td class="table-td">Front End Lead, DBA</td>
+                <td class="table-td">tghadge@mail.sfsu.edu</td>
+                </tr>
+                <tr>
+                <td class="table-td">Steve Tan</td>
+                <td class="table-td">Back End Lead</td>
+                <td class="table-td">stan4@mail.sfsu.edu</td>
+                </tr>
+                <td class="table-td">Chelsea Wang</td>
+                <td class="table-td">Github Master</td>
+                <td class="table-td">xwang18@mail.sfsu.edu</td>
+                </tr>
+                <tr>
+                <td class="table-td">Franky Dong</td>
+                <td class="table-td">Front End Developer</td>
+                <td class="table-td">hdong@mail.sfsu.edu</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="myModal-Rules" class="modal">
+        <!-- Modal content -->
+        <div id="" class="modal-content">
+            <span id="closeModal-Rules" class="close">&times;</span>
+            <h4>UNO Online Rules!</h4>
+            <ul class="list-unstylx`ed rule-list">
+                <li>The game starts with seven cards being dealt to each player.<br></li>
+                <li>The remaining cards are placed on the table in a pile, with the top card turned over to start a second pile.<br></li>
+                <li>The player to the left of the dealer goes first, with the aim to
+                    lay down one of his or her cards on top of the <br>  upturned card.To do this the card must be either a color, number or symbol match.<br></li>
+                <li>If the player does not have a card to match color, number or symbol, they must pick up an additional card from the <br>downturned pile.<br>
+
+                </li>
+                <li>
+                    Players also have the option to play wild cards at any time.<br> The straight wild card allows a player to set the color required of
+                    the next player.<br> The wild draw four requires the next player to pick up four cards for the pile.<br>
+                </li>
+                <li>Skip' cards lead to the next player missing a turn, while 'draw two' cards require that they pick up two cards and<br> 'reverse' cards change the direction of the game.<br></li>
+                <li>The game ends when a player has discarded all of their cards.<br> When a player has one card remaining they must call 'Uno' immediately to alert the other players of their status.<br></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="container1" >
+    <div class="row centered-form">
+        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-center">{{action}}</h3>
+                </div>
+                <div class="panel-body">
+                    <form role="form" action="/login" method = "post">
+                        <div class="form-group">
+                            <input type="text" name="username" id="username" class="form-control input-sm" placeholder="Username">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+                        </div>
+
+                        <input type="submit" value="{{action}}" class="btn btn-info btn-block">
+                        <a href="register" class="pull-right margin-top-5"><i>Not a registered user? Create your account</i></a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var body = document.getElementsByTagName('body');
+    $(body).addClass("bg-image-boardCard");
+    
+    /*****MODAL Window Handling*******/
+
+    $("#about").click(function() {
+        $("#myModal-About").css('display', 'block');
+    });
+
+    $("#rules").click(function() {
+        $("#myModal-Rules").css('display', 'block');
+    });
+
+    $("#closeModal-About").click(function() {
+        $("#myModal-About").css('display', 'none');
+    });
+
+    $("#closeModal-Rules").click(function() {
+        $("#myModal-Rules").css('display', 'none');
+    });
+
+</script>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+<!-- Bootstrap CSS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

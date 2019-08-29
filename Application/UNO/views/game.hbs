@@ -1,0 +1,279 @@
+<div class="container">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">{{title}}</a>
+            <div class="alert alert-sucess" id="success-alert" style="float: right ;text-align: center; display: none; color: black; background-color: lightblue;width: 1200px; z-index: 4; position: absolute;  height: 50px">
+
+                <button type="button" class="close" data-dismiss="alert" >x</button>
+                <strong><div id="unoAlertMessage" ></div></strong>
+
+            </div>
+        </div>
+
+        <ul class="nav navbar-nav pull-right">
+            <li class="#"><a href="/">Logout</a></li>
+            <li><a id="rules">Rules</a></li>
+            <li ><a id="about">About</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <div id="myModal-About" class="modal">
+
+        <!-- Modal content -->
+        <div id="" class="modal-content">
+            <span id="closeModal-About" class="close">&times;</span>
+            <h3>Team 5</h3>
+            <table class="table" style="table">
+            <thead>
+                <tr>
+                <th scope="col" class="table-th">Name</th>
+                <th scope="col" class="table-th">Role</th>
+                <th scope="col" class="table-th">email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td class="table-td">Shivam Rai</td>
+                <td class="table-td">Team 5 lead, Back-end Developer</td>
+                <td class="table-td">srai3@mail.sfsu.edu</td>
+                </tr>
+                <tr>
+                <td class="table-td">Tejal Ghadge</td>
+                <td class="table-td">Front End Lead, DBA</td>
+                <td class="table-td">tghadge@mail.sfsu.edu</td>
+                </tr>
+                <tr>
+                <td class="table-td">Steve Tan</td>
+                <td class="table-td">Back End Lead</td>
+                <td class="table-td">stan4@mail.sfsu.edu</td>
+                </tr>
+                <td class="table-td">Chelsea Wang</td>
+                <td class="table-td">Github Master</td>
+                <td class="table-td">xwang18@mail.sfsu.edu</td>
+                </tr>
+                <tr>
+                <td class="table-td">Franky Dong</td>
+                <td class="table-td">Front End Developer</td>
+                <td class="table-td">hdong@mail.sfsu.edu</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="myModal-Rules" class="modal">
+        <!-- Modal content -->
+        <div id="" class="modal-content">
+            <span id="closeModal-Rules" class="close">&times;</span>
+            <h4>UNO Online Rules!</h4>
+            <ul class="list-unstylx`ed rule-list">
+                <li>The game starts with seven cards being dealt to each player.<br></li>
+                <li>The remaining cards are placed on the table in a pile, with the top card turned over to start a second pile.<br></li>
+                <li>The player to the left of the dealer goes first, with the aim to
+                    lay down one of his or her cards on top of the <br>  upturned card.To do this the card must be either a color, number or symbol match.<br></li>
+                <li>If the player does not have a card to match color, number or symbol, they must pick up an additional card from the <br>downturned pile.<br>
+
+                </li>
+                <li>
+                    Players also have the option to play wild cards at any time.<br> The straight wild card allows a player to set the color required of
+                    the next player.<br> The wild draw four requires the next player to pick up four cards for the pile.<br>
+                </li>
+                <li>Skip' cards lead to the next player missing a turn, while 'draw two' cards require that they pick up two cards and<br> 'reverse' cards change the direction of the game.<br></li>
+                <li>The game ends when a player has discarded all of their cards.<br> When a player has one card remaining they must call 'Uno' immediately to alert the other players of their status.<br></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="fullsize" id="gameContainer" style="z-index: 3; opacity: 1">
+    <div class="panel panel-default centered-form-game fullsize">
+        <div class="panel-heading">
+            <div class="row">
+                <b class="panel-title margin-left-5" >{{results.room_name}}</b>
+            </div>
+        </div>
+        <div id="gameContainerBody" class="panel-body fullheight black">
+            <div class="row fullheight">
+                <div class="col-xs-8 col-sm-8 col-md-9 col-lg-9 fullheight">
+                    <div class="fullheight border-box">
+                        <div class="" style="height: calc(100% - 5rem)">
+                            <div style="height: calc(100% - 15rem)" class="display-flex">
+                                <div class="fullheight col-md-3" >
+                                            <span id="playerTurn1" class="big-dot margin-top-5 margin-left-5 player-left">
+                                                 <label id="lblplayer1" class="dot-label dot-label-player"></label>
+                                            </span>
+                                    <label id="player1" class="player-left-label teamplayer"></label>
+                                </div>
+                                <div class="fullheight  box col-md-6 container">
+                                    <div class="row" style="height: 12rem">
+                                                <span id="playerTurn2"  class="big-dot margin-top-5 margin-left-5 player-top">
+                                                     <label id="lblplayer2" class="dot-label dot-label-player"></label>
+                                                </span>
+                                        <label id="player2" class="player-top-label teamplayer"></label>
+                                    </div>
+                                    <div class="row border-box" style="height: calc(100% - 15rem)">
+                                        <div id="deck" class="rectangle " style="margin-left: 40%;margin-top: 12%;background-color: lightyellow;height:13.7rem;">
+                                            <img id="boardCard"   height="100%" width="100%">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fullheight col-md-3">
+                                            <span id="playerTurn3" class="big-dot margin-top-5 margin-left-5 player-right">
+                                                  <label id="lblplayer3" class="dot-label dot-label-player"></label>
+                                            </span>
+                                    <label id="player3" class="player-right-label teamplayer"></label>
+                                </div>
+                            </div>
+                            <div class="display-flex" style="height: 15rem;">
+                                        <span id="turn" class="big-dot margin-top-5 margin-left-5 lightred" style="margin-top: 5%">
+                                             <label class="dot-label">Play</label>
+                                        </span>
+
+                                <div id="cardHolderDiv" style="display: flex">
+                                    {{#each cards}}
+                                        <div class="rectangle pull-left col-xs-12 col-sm-8 col-md-9 col-lg-9 " >
+                                            <!-- <img src= "/images/large/{{color}}_{{name}}_large.png"  height="100%" width="100%">-->
+                                            <img src= "/images/large/card_back_alt_large.png"  height="100%" width="100%"  >
+                                        </div>
+                                    {{/each}}
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="border-top" style="height: 5rem;display: flex" id="unoActions">
+                            <input id="startGame" type="button" value="Start" class="pull-left margin-top-5 margin-left-5 btn btn-primary blinking">
+                            <input id="drawCard" type="button" value="Draw Card" class="pull-left margin-top-5 margin-left-5  btn btn-primary">
+                            <input id="endTurn" type="button" value="End Turn" class="pull-left margin-top-5 margin-left-5 btn btn-primary">
+                            <input id="uno" type="button" value="UNO" class="pull-left margin-top-5 margin-left-5 btn btn-primary">
+                            <input id="chooseColor" type="button" value="Color" class="pull-left margin-top-5 margin-left-5 btn btn-primary">
+                            <div style="text-align:left " id="colorDiv">
+                                <span id="red" class="dot margin-top-5 margin-left-5 red"></span>
+                                <span id="green" class="dot margin-top-5 margin-left-5 green"></span>
+                                <span id="yellow" class="dot margin-top-5 margin-left-5 yellow"></span>
+                                <span id="blue" class="dot margin-top-5 margin-left-5 blue"></span>
+                            </div>
+                            <input id="joined" type="button" value="Color" style="display: none;">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-3 col-lg-3 fullheight">
+
+                    <div class="fullheight border-box">
+
+                        <div id="chatBox" style="height: calc(100% - 5rem)">
+
+                        </div>
+                        <div class="border-top" style="height: 5rem;">
+                            <input id="message" type="text" placeholder="  Type a message" style="width: 71%;height: 100%">
+                            <input type="button" id="send" class="pull-right" style="height:100%; width:25%" value="Send">
+
+                        <!--    <img src="/images/send1.jpg" type="button" class="pull-right" height="100%" width="25px">-->
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div id="divPlayer0" style="visibility: hidden"></div>
+            <div id="divPlayer1" style="visibility: hidden"></div>
+            <div id="divPlayer2" style="visibility: hidden"></div>
+            <div id="divPlayer3" style="visibility: hidden"></div>
+
+            <div id="divSession0" style="visibility: hidden"></div>
+            <div id="divSession1" style="visibility: hidden"></div>
+            <div id="divSession2" style="visibility: hidden"></div>
+            <div id="divSession3" style="visibility: hidden"></div>
+
+
+        </div>
+        {{!-- <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button> --}}
+
+        <!-- Modal -->
+        <div class="modal fade" id="aboutUS" tabindex="-1" role="dialog" aria-labelledby="aboutUSModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">About us!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        {{!-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/div>
+    </div-->
+    </div>
+</div>
+<script>
+    var body = document.getElementsByTagName('body');
+    //var body = document.getElementById("gameContainerBody");
+    $(body).addClass("bg-image");
+
+
+    //creates the player array
+    var playerarray = [];
+    playerarray.push('{{results.player_1}}');
+    playerarray.push('{{results.player_2}}');
+    playerarray.push('{{results.player_3}}');
+    playerarray.push('{{results.player_4}}');
+    console.log(playerarray);
+
+
+    //creates an array of all players besides the user logged in
+
+    var playerarr2 = playerarray.filter(function(filtername){
+        return filtername != ''
+    });
+    console.log(playerarr2);
+
+    $("#divPlayer0").html(playerarr2[0]);
+    $("#divPlayer1").html(playerarr2[1]);
+    $("#divPlayer2").html(playerarr2[2]);
+    $("#divPlayer3").html(playerarr2[3]);
+
+
+
+    /*****MODAL Window Handling*******/
+
+    $("#about").click(function() {
+        $("#myModal-About").css('display', 'block');
+    });
+
+    $("#rules").click(function() {
+        $("#myModal-Rules").css('display', 'block');
+    });
+
+    $("#closeModal-About").click(function() {
+        $("#myModal-About").css('display', 'none');
+    });
+
+    $("#closeModal-Rules").click(function() {
+        $("#myModal-Rules").css('display', 'none');
+    });
+
+    $(document).ready(function () {
+        $("#joined").click();
+    });
+
+</script>
+
+<script src="../javascripts/player.js"></script>
+<script src="../javascripts/gamesockets.js"></script>
+<script src="../javascripts/listeners.js"></script>

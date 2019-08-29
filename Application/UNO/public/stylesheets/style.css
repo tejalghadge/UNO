@@ -1,0 +1,341 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  position: absolute;
+  height: calc(100% - 30px);
+  width: calc(100% - 10px);
+}
+
+a {
+  color: #00B7FF;
+}
+.centered-form{
+  margin-top: 20%;
+}
+
+.margin-top-5{
+  margin-top: 5px;
+}
+
+.centered-form-lobby{
+  margin-top: 5%;
+  /*margin-left: 20%;*/
+  margin-right: 20%;
+  width: 100%;
+}
+
+.centered-form-game{
+  margin-top: 2%;
+  margin-right: 5%;
+  width: 100%;
+}
+
+
+.margin-left-5{
+  margin-left: 5px;
+}
+
+.margin-right-5{
+  margin-right: 5px;
+}
+
+input{
+  width: 20rem;
+}
+
+input[type=button]{
+  width: 10rem;
+}
+
+.fullsize{
+  height: calc(100% - 10px);
+  width: calc(100% - 10px);
+}
+
+.fullheight{
+  height: calc(100% - 10px);
+}
+
+.border-box{
+  border: 1px solid lightgrey
+}
+.border-top{
+  border-top: 1px solid lightgrey
+}
+
+.dot{
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.big-dot{
+
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: lightblue;
+}
+
+
+.red {
+  background-color: red;
+}
+
+.green{
+  background-color: green;
+}
+
+.yellow{
+  background-color: yellow;
+}
+
+.blue{
+  background-color: blue;
+}
+
+.lightgreen{
+  background-color: lightgreen;
+}
+
+.lightred{
+  background-color: lightcoral;
+}
+
+.rectangle{
+  max-width: 10rem;
+  max-height: 13.7rem;
+  border:1px solid gray;
+  margin-top: 5px;
+  margin-left: 15px;
+}
+
+.rotate20 {
+  width: 150px;
+  height: 80px;
+  background-color: lightyellow;
+  -ms-transform: rotate(20deg); /* IE 9 */
+  -webkit-transform: rotate(20deg); /* Safari 3-8 */
+  transform: rotate(20deg);
+}
+
+
+.display-flex{
+  display: flex;
+}
+
+.player-left{
+  position: absolute;
+  margin-top: 70%;
+  margin-left: 60%;
+  background-image: url(../images/1.png);
+  background-size: cover;
+}
+
+.playing{
+  border: 8px solid lawngreen;
+}
+
+.player-right{
+  position: absolute;
+  margin-top: 70%;
+  margin-right: 10%;
+  background-image: url(../images/4.png);
+  background-size: cover;
+}
+
+.player-top{
+  position: absolute;
+  margin-top: 4%;
+  margin-left: 40%;
+  background-image: url(../images/2.png);
+  background-size: cover;
+}
+
+.player-left-label{
+  position: absolute;
+  margin-top: 100%;
+  margin-left: 62%;
+  width: 10rem;
+  height: 25px;
+  text-align: left;
+  color: white;
+  text-shadow:  2px 2px 4px #000000;
+
+}
+
+.player-right-label{
+  position: absolute;
+  margin-top: 100%;
+  margin-right: 10%;
+  margin-left: 7%;
+  width: 10rem;
+  height: 25px;
+  text-align: left;
+  color: white;
+}
+
+.player-top-label{
+  position: absolute;
+  margin-top: 17%;
+  margin-left: 43%;
+  width: 10rem;
+  height: 25px;
+  text-align: left;
+  color: white;
+}
+
+.dot-label{
+  margin-left: 15px;
+  margin-top: 20px
+}
+.dot-label-player{
+  margin-left: 25px;
+  font-size: large;
+}
+
+.bg-image{
+ background-color: black;
+  z-index: 1;
+
+
+}
+
+.bg-image-boardCard{
+  background-image: url("../images/boardCard.png");
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: auto;
+}
+
+.bg-image-dark{
+  background-image: url("../images/blue_body_repeat.jpg");
+  /*  background-color: black;*/
+  z-index: 1;
+
+}
+.card{
+  background-image: url(../images/red_1.png)
+}
+
+.black{
+/* background-color: black;*/
+  background-image: url("../images/blue_body_repeat.jpg");
+  /*background-image: url("../images/dark.jpg");*/
+}
+
+.blinking{
+  animation:blinkingText 0.8s infinite;
+}
+
+@keyframes blinkingText{
+  0%{     color: #000; font-weight: bold   }
+/*  49%{    color: transparent; font-weight: bold}*/
+  50%{    color: transparent; font-weight: bold}
+/*  99%{    color:transparent;  font-weight: bold}*/
+  100%{   color: #000; font-weight: bold   }
+}
+
+
+@keyframes blinkingImg {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.blinkingImg {
+  animation: blinkingImg 1s;
+  animation-iteration-count: infinite;
+
+}
+
+
+@keyframes zoominoutsinglefeatured {
+  0% {
+    transform: scale(1,1);
+  }
+  50% {
+    transform: scale(1.2,1.2);
+  }
+  100% {
+    transform: scale(1,1);
+  }
+}
+
+.zoomImg {
+  animation: zoominoutsinglefeatured 2s infinite ;
+}
+
+/***MODAL***/
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.table {
+  background-repeat: no-repeat;
+    background-image: url('https://www.mipro.fi/application/files/5214/6779/3495/aboutus-bottombackground.jpg');
+    height: 300px;
+    width: 1020px;
+    table-layout: fixed;
+}
+
+.table-th {
+  overflow: hidden;
+}
+
+.table-td {
+  overflow: hidden;
+}
+
+
+.rulebg{
+  background: url(../images/rule.jpg);
+  background-size: inherit;
+  height: calc(100% - 50px);
+
+}

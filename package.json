@@ -1,0 +1,22 @@
+{
+  "name": "csc667-sp19-team05",
+  "version": "1.0.0",
+  "description": "3. When ready, initialize your repository with the initial state of your project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csc667-02-sp19/csc667-sp19-Team05.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/csc667-02-sp19/csc667-sp19-Team05/issues"
+  },
+  "homepage": "https://github.com/csc667-02-sp19/csc667-sp19-Team05#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
